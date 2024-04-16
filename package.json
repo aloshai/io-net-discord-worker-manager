@@ -1,0 +1,21 @@
+{
+  "name": "io-net-discord-worker-manager",
+  "version": "1.0.0",
+  "description": "A discord bot that manages docker containers",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js"
+  },
+  "keywords": [],
+  "author": "aloshai",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "dependencies": {
+    "cron": "^3.1.7",
+    "discord.js": "^14.14.1",
+    "dockerode": "^4.0.2",
+    "dotenv": "^16.4.5"
+  }
+}
