@@ -295,9 +295,7 @@ async function runShellCommand(interaction, command) {
 
 // Restart containers is not good practice for the io containers
 async function restartAllContainers() {
-  await stopAllContainers();
-
-  await startWorkerAsync(false);
+  await startWorkerAsync(true);
 }
 
 async function pauseAllContainers() {
@@ -369,7 +367,7 @@ async function chmodScriptMac() {
 }
 
 async function chmodScriptLinux() {
-  const cmd = "chmod +x ionet-setup.sh && ./ionet-setup.sh";
+  const cmd = "chmod +x ionet-setup.sh";
 
   const promise = new Promise((resolve, reject) => {
     exec(cmd, (error, stdout, stderr) => {
@@ -457,10 +455,6 @@ async function startWorkerAsync(removeContainers = false) {
 }
 
 async function startWorkerCommand(interaction, removeContainers = false) {
-  if (removeContainers) {
-    await stopAllContainers();
-  }
-
   const result = await startWorkerAsync(removeContainers);
   interaction.editReply(result);
 }
