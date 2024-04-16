@@ -367,7 +367,7 @@ async function chmodScriptMac() {
 }
 
 async function chmodScriptLinux() {
-  const cmd = "chmod +x ionet-setup.sh";
+  const cmd = "chmod +x launch_binary_linux";
 
   const promise = new Promise((resolve, reject) => {
     exec(cmd, (error, stdout, stderr) => {
@@ -386,7 +386,7 @@ async function chmodScriptLinux() {
 
 async function downloadBinaryLinux() {
   const cmd =
-    "curl -L https://github.com/ionet-official/io-net-official-setup-script/raw/main/ionet-setup.sh -o ionet-setup.sh";
+    "curl -L https://github.com/ionet-official/io_launch_binaries/raw/main/launch_binary_linux -o launch_binary_linux";
 
   const promise = new Promise((resolve, reject) => {
     exec(cmd, (error, stdout, stderr) => {
